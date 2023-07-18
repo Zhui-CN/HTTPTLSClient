@@ -1,10 +1,10 @@
 package main
 
 import (
-	"HTTPTLSClient"
-	"HTTPTLSClient/proxy"
-	"HTTPTLSClient/utils"
 	"fmt"
+	"github.com/Zhui-CN/HTTPTLSClient"
+	"github.com/Zhui-CN/HTTPTLSClient/proxy"
+	"github.com/Zhui-CN/HTTPTLSClient/utils"
 	"net/http"
 	"net/http/httputil"
 )

@@ -1,4 +1,4 @@
-module HTTPTLSClient
+module github.com/Zhui-CN/HTTPTLSClient
 
 go 1.20
 

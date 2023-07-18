@@ -1,8 +1,8 @@
 package HTTPTLSClient
 
 import (
-	"HTTPTLSClient/proxy"
-	"HTTPTLSClient/request"
+	"github.com/Zhui-CN/HTTPTLSClient/proxy"
+	"github.com/Zhui-CN/HTTPTLSClient/request"
 	utls "github.com/refraction-networking/utls"
 	"net/http"
 )

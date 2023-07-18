@@ -1,13 +1,13 @@
 package request
 
 import (
-	"HTTPTLSClient/proxy"
-	"HTTPTLSClient/utils"
 	"bufio"
 	"context"
 	"crypto/tls"
 	"errors"
 	"fmt"
+	"github.com/Zhui-CN/HTTPTLSClient/proxy"
+	"github.com/Zhui-CN/HTTPTLSClient/utils"
 	utls "github.com/refraction-networking/utls"
 	"golang.org/x/net/http2"
 	"io"
