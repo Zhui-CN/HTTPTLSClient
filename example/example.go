@@ -7,12 +7,12 @@ import (
 	"github.com/Zhui-CN/HTTPTLSClient/utils"
 	"net/http"
 	"net/http/httputil"
+	"net/url"
 )
 
 var (
 	resp   *http.Response
-	url    = "https://tls.peet.ws/api/all"
-	req, _ = http.NewRequest(http.MethodGet, url, nil)
+	req, _ = http.NewRequest(http.MethodGet, "https://tls.peet.ws/api/all", nil)
 )
 
 func DumpResponseNoBody(response *http.Response) {
@@ -31,8 +31,12 @@ func do(resp *http.Response, err error) *http.Response {
 	return resp
 }
 
+func getProxy(req *http.Request) *url.URL {
+	return nil
+}
+
 func mainWithProxy() *http.Response {
-	client := HTTPTLSClient.New(proxy.Proxies, nil)
+	client := HTTPTLSClient.New(proxy.FuncToProxy(getProxy), nil)
 	req.Header.Set(proxy.TypeKey, "default")
 	req.Header.Set(proxy.CountryKey, "us")
 	defer client.CloseIdleConnections()
