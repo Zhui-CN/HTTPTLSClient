@@ -16,6 +16,17 @@ type Proxy interface {
 	GetURL(*http.Request) *url.URL
 }
 
+type defaultProxy func(*http.Request) *url.URL
+
+func (p defaultProxy) GetURL(req *http.Request) *url.URL {
+	return p(req)
+}
+
+// FuncToProxy 获取代理函数转换成接口函数
+func FuncToProxy(f func(*http.Request) *url.URL) Proxy {
+	return defaultProxy(f)
+}
+
 // GetURL 实现Proxy接口
 type proxyMap map[string]*url.URL
 
